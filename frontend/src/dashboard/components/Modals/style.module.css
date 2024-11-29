@@ -1,0 +1,204 @@
+.alertBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.alertBox {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+}
+
+.alertTitle {
+  margin: 0;
+  color: #216D9E;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.alertMessage {
+  color: #216D9E;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-around;
+}
+
+.confirmButton {
+  background-color: #216D9E;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancelButton {
+  background-color: transparent;
+  color: #216D9E;
+  border: 2px solid #216D9E;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmButton:hover,
+.cancelButton:hover {
+  opacity: 0.9;
+}
+
+.modaloverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  /* Prevents unwanted scrolling */
+}
+
+.modalcontent {
+  background: white;
+  position: relative;
+  width: 90%;
+  max-height: 90%;
+  /* Restricts modal height */
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: auto;
+  /* Enables scrolling for content */
+}
+
+.closeicon {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-weight: bold;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+}
+
+.column h3 {
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.row label {
+  flex: 1;
+}
+
+.row input {
+  flex: 2;
+  padding: 7px;
+  margin-left: 10px;
+  border: 2px solid #216D9E;
+  border-radius: 10px;
+}
+.blogInput{
+  padding: 7px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 15px;
+  background-color: #185ea5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type="number"] {
+  width: 100px;
+  padding: 5px;
+}
+
+.counterInput {
+  width: 20px;
+  padding: 5px;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: textfield;
+  /* Removes spinners on some browsers */
+}
+
+.counterInput::-webkit-inner-spin-button,
+.counterInput::-webkit-outer-spin-button {
+  appearance: auto;
+  /* Restores spinners for Chrome/Safari */
+}
+
+.counterInput:focus {
+  border-color: #185ea5;
+  outline: none;
+}
+
+@media screen and (max-width: 1110px) {
+  .modaloverlay {
+    padding: 0px;
+  }
+
+  .modaloverlay .modalcontent {
+    width: 90vw;
+  }
+
+  .modalcontent input {
+    padding: 5px;
+    margin-top: 5px;
+  }
+
+  .modalcontent button {
+    margin-top: 10px;
+    padding: 5px 10px;
+  }
+
+  .flexContainer {
+    flex-direction: column
+  }
+
+}

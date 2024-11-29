@@ -8,7 +8,8 @@ import Typography from "@mui/joy/Typography";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { useNavigate } from "react-router-dom";
 
-export default function ProductCard() {
+export default function ProductCard({product}) {
+
   const navigate = useNavigate();
   return (
     <Card
@@ -20,10 +21,9 @@ export default function ProductCard() {
       sx={{ width: 320 }}
     >
       <div>
-        <Typography level="title-lg">Yosemite National Park</Typography>
-        {/* <Typography level="body-sm">April 24 to May 02, 2021</Typography> */}
+        <Typography level="title-lg">{product.name}</Typography>
         <IconButton
-          aria-label="bookmark Bahamas Islands"
+          aria-label={`Add ${product.name} to cart`}
           variant="plain"
           color="neutral"
           size="sm"
@@ -34,21 +34,21 @@ export default function ProductCard() {
       </div>
       <AspectRatio minHeight="120px" maxHeight="200px">
         <img
-          src="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286"
-          srcSet="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286&dpr=2 2x"
+          src={product.frontImage}
+          srcSet={product.frontImage}
           loading="lazy"
-          alt=""
+          alt={product.name}
         />
       </AspectRatio>
       <CardContent orientation="horizontal">
         <div>
           <Typography level="body-xs">Total price:</Typography>
           <Typography fontSize="lg" fontWeight="lg">
-            $2,900
+            {product.price}$
           </Typography>
         </div>
         <Button
-          onClick={() => navigate('/product-details')}
+          onClick={() => navigate('/product-details/' + product._id)}
           variant="solid"
           size="md"
           color="primary"
@@ -61,3 +61,8 @@ export default function ProductCard() {
     </Card>
   );
 }
+
+/* 
+Made by: Labeeb Tariq
+Updated by: Wali M.
+*/

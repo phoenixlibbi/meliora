@@ -1,27 +1,35 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import CardActionArea from '@mui/material/CardActionArea';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+// import CardMedia from '@mui/material/CardMedia';
+import Typography from "@mui/material/Typography";
+import CardActionArea from "@mui/material/CardActionArea";
 
-export default function WholeSaleCard() {
+export default function WholeSaleCard({ pkg }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
-        <CardMedia
-          component="img"
+        <img
           height="70"
-          image="https://www.spectrumchemical.com/media/catalog/category/chemicals_fine-chemicals-in-bulk.png"
-          alt="green iguana"
+          src={pkg.image}
+          alt={pkg.name}
+          crossOrigin={
+            pkg.image.startsWith("http://localhost:3001")
+              ? "anonymous"
+              : undefined
+          }
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <div className="flex justify-between">
+            <Typography gutterBottom variant="h5" component="div">
+              {pkg.name}
+            </Typography>
+            <Typography gutterBottom variant="h6" component="div">
+              ${pkg.price}
+            </Typography>
+          </div>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            {pkg.description}
           </Typography>
         </CardContent>
       </CardActionArea>

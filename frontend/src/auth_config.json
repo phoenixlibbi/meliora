@@ -1,0 +1,6 @@
+{
+    "domain": "your-auth0-domain",
+    "audience": "your-auth0-audience",
+    "clientId": "your-auth0-client-id",
+    "appOrigin": "http://localhost:3000"
+}

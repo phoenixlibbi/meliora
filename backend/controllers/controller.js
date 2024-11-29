@@ -1,5 +1,0 @@
-const Customer = require('../models/customerSchema')
-const Admin = require('../models/adminSchema')
-const Product = require('../models/productSchema')
-const Package = require('../models/packageSchema')
-const Review = require('../models/reviewSchema')

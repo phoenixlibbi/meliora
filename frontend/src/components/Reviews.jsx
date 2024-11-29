@@ -1,20 +1,5 @@
 "use client";
-
-import React, { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "./../ui/infinite-moving-cards.tsx";
-
-export function Reviews() {
-  return (
-    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-      <h1 className="text-4xl font-bold dark:text-white">Testimonials</h1>
-      <InfiniteMovingCards
-        items={testimonials}
-        direction="right"
-        speed="slow"
-      />
-    </div>
-  );
-}
 
 const testimonials = [
   {
@@ -47,3 +32,16 @@ const testimonials = [
     title: "Moby-Dick",
   },
 ];
+
+export function Reviews() {
+  return (
+    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <h1 className="text-4xl font-bold dark:text-white">Testimonials</h1>
+      <InfiniteMovingCards
+        items={testimonials}
+        direction="right"
+        speed="slow"
+      />
+    </div>
+  );
+}

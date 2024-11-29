@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
-import { cn } from "../lib/utils.ts";
+import { cn } from "../lib/utils";
 
 export const StickyScroll = ({
   content,
@@ -53,6 +53,7 @@ export const StickyScroll = ({
     linearGradients[0]
   );
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
   }, [activeCard]);

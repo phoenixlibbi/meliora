@@ -1,0 +1,62 @@
+.alertBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.alertBox {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+.alertTitle {
+    margin: 0;
+    color: #216D9E;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.alertMessage {
+    color: #216D9E;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: space-around;
+}
+
+.confirmButton {
+    background-color: #216D9E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancelButton {
+    background-color: transparent;
+    color: #216D9E;
+    border: 2px solid #216D9E;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirmButton:hover,
+.cancelButton:hover {
+    opacity: 0.9;
+}
